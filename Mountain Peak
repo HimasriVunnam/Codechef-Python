@@ -1,0 +1,19 @@
+def next_higher_peak(heights):
+    # Write your code here
+    n=len(heights)
+    res=[-1]*n 
+    stack=[]
+    for i in range(n):
+        while stack and heights[i]>heights[stack[-1]]:
+            idx=stack.pop()
+            res[idx]=heights[i]
+        stack.append(i)
+    return res
+if __name__ == "__main__":
+    n = int(input())
+    heights = list(map(int, input().split()))
+    
+    result = next_higher_peak(heights)
+
+    for height in result:
+        print(height, end=" ")
