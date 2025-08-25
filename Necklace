@@ -1,0 +1,20 @@
+import sys
+def main():
+    data=sys.stdin.read().split()
+    t=int(data[0])
+    idx=1
+    res=[]
+    for _ in range(t):
+        n=int(data[idx]); k=int(data[idx+1])
+        idx+=2
+        arr=list(map(int,data[idx:idx+n]))
+        idx+=n 
+        if n==0:
+            res.append("")
+            continue
+        k%=n
+        rotated=arr[k:]+arr[:k]
+        res.append(" ".join(map(str,rotated)))
+    sys.stdout.write("\n".join(res))
+if __name__=="__main__":
+    main()
