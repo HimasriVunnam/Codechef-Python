@@ -1,0 +1,19 @@
+def main():
+    import sys
+    input=sys.stdin.readline
+    t=int(input())
+    results=[]
+    for _ in range(t):
+        n,m,h=map(int,input().split())
+        cars=list(map(int,input().split()))
+        outlets=list(map(int,input().split()))
+        outlets=[b*h for b in outlets]
+        cars.sort(reverse=True)
+        outlets.sort(reverse=True)
+        total=0
+        for i in range(min(n,m)):
+            total+=min(cars[i],outlets[i])
+        results.append(str(total))
+    print("\n".join(results))
+if __name__=="__main__":
+    main()
