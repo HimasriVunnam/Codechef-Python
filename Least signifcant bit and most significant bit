@@ -1,0 +1,7 @@
+def flip(n):
+    n=n^1
+    pos=n.bit_length()-1
+    n=n^(1<<pos)
+    return n 
+n=int(input().strip())
+print(flip(n))
