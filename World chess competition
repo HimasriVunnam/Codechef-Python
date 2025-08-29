@@ -1,0 +1,21 @@
+# cook your dish here
+t=int(input())
+for _ in range(t):
+    x=int(input())
+    s=input().strip()
+    carlsen=0
+    chef=0
+    for i in s:
+        if i=='C':
+            carlsen+=2
+        elif i=='N':
+            chef+=2
+        elif i=='D':
+            carlsen+=1
+            chef+=1
+    if carlsen>chef:
+        print(60*x)
+    elif carlsen<chef:
+        print(40*x)
+    else:
+        print(55*x)
