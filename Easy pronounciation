@@ -1,0 +1,18 @@
+T=int(input())
+for i in range(T):
+    N=int(input())
+    S=input().strip()
+    c_count=0
+    pronounce=False
+    for i in range(len(S)):
+        if S[i]=='a' or S[i]=='e' or S[i]=='i' or S[i]=='o' or S[i]=='u':
+            c_count=0
+        else:
+            c_count+=1
+            if c_count>=4:
+                pronounce=True
+                break
+    if pronounce:
+        print("NO")
+    else:
+        print("YES")
