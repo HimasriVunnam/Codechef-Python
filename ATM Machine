@@ -1,0 +1,13 @@
+# cook your dish here
+T=int(input())
+for t in range(T):
+    N,k=map(int,input().split())
+    A=list(map(int,input().split()))
+    result=""
+    for i in range(N):
+        if A[i]<=k:
+            k=k-A[i]
+            result=result+"1"
+        else:
+            result=result+"0"
+    print(result)
